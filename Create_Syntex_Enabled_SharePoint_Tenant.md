@@ -1,6 +1,6 @@
 # Creating a Demo Microsoft 365 Tenant
 
-NOTE: This step is only required if you do not already have a Syntex enabled SharePoint tenant.
+NOTE: This step is only required if you do not already have a Syntex enabled SharePoint tenant and are a Microsoft employee.
 
 To get started, we will create a SharePoint tenant to host the content that will be enriched using Syntex.  To do this, visit https://cdx.transform.microsoft.com/my-tenants and choose “Create Tenant”.  Choose your tenant location and pick the “Microsoft 365 Enterprise with Users and No Content”.
 
