@@ -1,2 +1,2 @@
-# Extending_SharePoint_Syntex_to_Cognitive_Search
-Tutorial on How to Extend Syntex Enriched Content to Cognitive Search
+# Extending SharePoint Syntex to Cognitive Search
+This is a tutorial on how to extend SharePoint  Syntex enriched content to Cognitive Search.  
