@@ -12,3 +12,4 @@ Azure Cognitive Search enables organizations to create these types of rich custo
 
 This document explains how to create a customer ready demo that extends enriched content to Cognitive Search using Flow Automation.  
 
+- [*Step 1: Create a Syntex Enabled SharePoint tenant*](https://github.com/liamca/Extending_SharePoint_Syntex_to_Cognitive_Search/blob/main/Create_Syntex_Enabled_SharePoint_Tenant.md) (Microsoft Employees Only)
