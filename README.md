@@ -1,5 +1,5 @@
 # For Microsoft Use Only
-# Search Enabled LOB Apps using Cortex and Cognitive Search
+# Search Enabled LOB Apps using Syntex and Cognitive Search
 ## Overview
 SharePoint Syntex, the first product from Project Cortex, has shown be an incredibly powerful tool to enable organizations to easily transform content into knowledge.  This has been enabled through machine teaching which accelerates the extraction of valuable information as metadata from content within SharePoint.
 Microsoft 365 has long offered the ability to effectively search over enterprise content.  However, there are cases where organizations will require additional customization of their search application that are not targets for SharePoint.  A few examples of this could include:
