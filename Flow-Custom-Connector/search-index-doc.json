@@ -1,0 +1,266 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "SearchIndexClient",
+    "description": "Client that can be used to query an index and upload, merge, or delete documents.",
+    "version": "2020-06-30",
+    "x-ms-code-generation-settings": {
+      "useDateTimeOffset": true,
+      "syncMethods": "None"
+    }
+  },
+  "x-ms-parameterized-host": {
+    "hostTemplate": "{endpoint}/indexes('{indexName}')",
+    "useSchemePrefix": false,
+    "parameters": [
+      {
+        "$ref": "#/parameters/EndpointParameter"
+      },
+      {
+        "$ref": "#/parameters/IndexNameParameter"
+      }
+    ]
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/docs/search.index": {
+      "post": {
+        "tags": [
+          "Documents"
+        ],
+        "operationId": "Documents_Index",
+        "externalDocs": {
+          "url": "https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents"
+        },
+        "x-ms-examples": {
+          "SearchIndexIndexDocuments": {
+            "$ref": "./examples/SearchIndexIndexDocuments.json"
+          }
+        },
+        "description": "Sends a batch of document write actions to the index.",
+        "parameters": [
+          {
+            "name": "batch",
+            "in": "body",
+            "description": "The batch of index actions.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/IndexBatch"
+            }
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/ClientRequestIdParameter"
+          }
+        ],
+        "x-ms-request-id": "request-id",
+        "responses": {
+          "200": {
+            "description": "Response containing the status of operations for all actions in the batch.",
+            "schema": {
+              "$ref": "#/definitions/IndexDocumentsResult"
+            }
+          },
+          "207": {
+            "description": "Response containing the status of operations for all actions in the batch.",
+            "schema": {
+              "$ref": "#/definitions/IndexDocumentsResult"
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "schema": {
+              "$ref": "#/definitions/SearchError"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "IndexAction": {
+      "properties": {
+        "@search.action": {
+          "type": "string",
+          "enum": [
+            "upload",
+            "merge",
+            "mergeOrUpload",
+            "delete"
+          ],
+          "x-ms-enum": {
+            "name": "IndexActionType",
+            "modelAsString": false,
+            "values": [
+              {
+                "value": "upload",
+                "name": "Upload",
+                "description": "Inserts the document into the index if it is new and updates it if it exists. All fields are replaced in the update case."
+              },
+              {
+                "value": "merge",
+                "name": "Merge",
+                "description": "Merges the specified field values with an existing document. If the document does not exist, the merge will fail. Any field you specify in a merge will replace the existing field in the document. This also applies to collections of primitive and complex types."
+              },
+              {
+                "value": "mergeOrUpload",
+                "name": "MergeOrUpload",
+                "description": "Behaves like merge if a document with the given key already exists in the index. If the document does not exist, it behaves like upload with a new document."
+              },
+              {
+                "value": "delete",
+                "name": "Delete",
+                "description": "Removes the specified document from the index. Any field you specify in a delete operation other than the key field will be ignored. If you want to remove an individual field from a document, use merge instead and set the field explicitly to null."
+              }
+            ]
+          },
+          "x-ms-client-name": "ActionType",
+          "x-nullable": false,
+          "description": "The operation to perform on a document in an indexing batch."
+        }
+      },
+      "additionalProperties": true,
+      "description": "Represents an index action that operates on a document."
+    },
+    "IndexingResult": {
+      "properties": {
+        "key": {
+          "type": "string",
+          "readOnly": true,
+          "description": "The key of a document that was in the indexing request."
+        },
+        "errorMessage": {
+          "type": "string",
+          "readOnly": true,
+          "description": "The error message explaining why the indexing operation failed for the document identified by the key; null if indexing succeeded."
+        },
+        "status": {
+          "x-ms-client-name": "Succeeded",
+          "type": "boolean",
+          "x-nullable": false,
+          "readOnly": true,
+          "description": "A value indicating whether the indexing operation succeeded for the document identified by the key."
+        },
+        "statusCode": {
+          "type": "integer",
+          "format": "int32",
+          "x-nullable": false,
+          "readOnly": true,
+          "description": "The status code of the indexing operation. Possible values include: 200 for a successful update or delete, 201 for successful document creation, 400 for a malformed input document, 404 for document not found, 409 for a version conflict, 422 when the index is temporarily unavailable, or 503 for when the service is too busy."
+        }
+      },
+      "required": [
+        "key",
+        "status",
+        "statusCode"
+      ],
+      "description": "Status of an indexing operation for a single document."
+    },
+	"IndexBatch": {
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IndexAction"
+          },
+          "description": "The actions in the batch.",
+          "x-ms-client-name": "Actions"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "description": "Contains a batch of document write actions to send to the index."
+    },
+    "IndexDocumentsResult": {
+      "properties": {
+        "value": {
+          "x-ms-client-name": "Results",
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/definitions/IndexingResult"
+          },
+          "description": "The list of status information for each document in the indexing request."
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "description": "Response containing the status of operations for all documents in the indexing request."
+    },
+	"SearchError": {
+      "properties": {
+        "code": {
+          "type": "string",
+          "readOnly": true,
+          "description": "One of a server-defined set of error codes."
+        },
+        "message": {
+          "type": "string",
+          "readOnly": true,
+          "description": "A human-readable representation of the error."
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SearchError"
+          },
+          "readOnly": true,
+          "description": "An array of details about specific errors that led to this reported error."
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "description": "Describes an error condition for the Azure Cognitive Search API."
+    }
+  },
+  "parameters": {
+    "ApiVersionParameter": {
+      "name": "api-version",
+      "in": "query",
+      "required": true,
+      "type": "string",
+      "description": "Client Api Version."
+    },
+    "ClientRequestIdParameter": {
+      "name": "x-ms-client-request-id",
+      "in": "header",
+      "required": false,
+      "type": "string",
+      "format": "uuid",
+      "description": "The tracking ID sent with the request to help with debugging.",
+      "x-ms-client-request-id": true,
+      "x-ms-parameter-grouping": {
+        "name": "request-options"
+      },
+      "x-ms-parameter-location": "method"
+    },
+    "EndpointParameter": {
+      "name": "endpoint",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "x-ms-skip-url-encoding": true,
+      "description": "The endpoint URL of the search service.",
+      "x-ms-parameter-location": "client"
+    },
+    "IndexNameParameter": {
+      "name": "indexName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "x-ms-skip-url-encoding": false,
+      "description": "The name of the index.",
+      "x-ms-parameter-location": "client"
+    }
+  }
+}
