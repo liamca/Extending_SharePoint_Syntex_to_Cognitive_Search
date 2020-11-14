@@ -10,7 +10,7 @@ Microsoft 365 has long offered the ability to effectively search over enterprise
 
 Azure Cognitive Search enables organizations to create these types of rich custom applications through a fully managed platform which makes extending Syntex enriched content to Cognitive Search an excellent option for these use cases.
 
-This document explains how to create a customer ready demo that extends enriched content to Cognitive Search using Flow Automation.  
+This document explains how to create a customer ready demo that extends Syntex enriched content to Cognitive Search.  
 
 ## Requirements
 
