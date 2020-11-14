@@ -14,9 +14,10 @@ This document explains how to create a customer ready demo that extends enriched
 
 ## Requirements
 
-- Azure Cognitive Search Service
-- Azure Logic Apps
-- SharePoint Tenant
+- SharePoint Tenant with Syntex enabled (instructions below on how to do this)
+- An Azure account with an active subscription. Create an [account for free](https://azure.microsoft.com/free/).
+- An Azure Cognitive Search service. [Create a service](https://docs.microsoft.com/en-us/azure/search/search-create-service-portal) or find an [existing service](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) under your current subscription. You can use a free service for this quickstart.
+- Azure Logic Apps instance
 
 ## Steps
 
