@@ -22,7 +22,7 @@ This document explains how to create a customer ready demo that extends enriched
 
 - [Step 1: Create a Syntex Enabled SharePoint tenant](https://github.com/liamca/Extending_SharePoint_Syntex_to_Cognitive_Search/blob/main/Create_Syntex_Enabled_SharePoint_Tenant.md) (Microsoft Employees Only)
 - [Step 2: Create and Apply Document Understanding](https://github.com/liamca/Extending_SharePoint_Syntex_to_Cognitive_Search/blob/main/Create_and_Apply_Doc_Understanding.md)
-- [Step 3: Extend SharePoint Content to Cognitive Search](https://github.com/liamca/Extending_SharePoint_Syntex_to_Cognitive_Search/blob/main/Extend_Content_to_Cognitive_Search.md) (Under Construction)
+- [Step 3: Extend SharePoint Content to Cognitive Search](https://github.com/liamca/Extending_SharePoint_Syntex_to_Cognitive_Search/blob/main/Extend_Content_to_Cognitive_Search.md)
 
 ## Optional: 
 - [Create and Apply Forms Understanding](https://github.com/liamca/Extending_SharePoint_Syntex_to_Cognitive_Search/blob/main/Create_and_Apply_Forms_Understanding.md)
