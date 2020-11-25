@@ -60,7 +60,7 @@ Creating this extractor illustrates using a pattern explanation on a date entity
   - 00/0/0000
   - 00/00/0000
   
-- Select “Ignore digit identity” (as you are just explaining the pattern) and select save.
+- Select “Any digit from 0-9” (as you are just explaining the pattern) and select save.
 - You will notice that this explanation alone is insufficient for the model to find the date. Add a phrase explanation like you did in the previous entity extractor, using the preceding string “As of” or the subsequent string “, our status with the” (yes, including the comma that immediately follows the date!).
 - Notice that once one of these phrase list explanations are added the model can successfully predict the change date. You can electively check the unlabeled files in the Test stage or return to the model home page.
 
