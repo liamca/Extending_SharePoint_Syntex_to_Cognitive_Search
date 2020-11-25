@@ -1,6 +1,6 @@
 # Extend Content to Azure Cognitive Search
 
-This section will explain how to extend the knowledge extracted through Syntex to Azure Cognitive Search. This service will power a subsequent custom seach application that will allow users to effectively search and explore this content.
+This section will explain how to extend the knowledge extracted through SharePoint Syntex to Azure Cognitive Search. This service will power a subsequent custom seach application that will allow users to effectively search and explore this content.
 
 ## Prerequisites
 Before you begin, you must have the following:
