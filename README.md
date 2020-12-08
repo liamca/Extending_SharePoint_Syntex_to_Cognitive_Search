@@ -1,4 +1,3 @@
-# For Microsoft Use Only
 # Search Enabled LOB Apps using Syntex and Cognitive Search
 ## Overview
 SharePoint Syntex, the first product from Project Cortex, has shown to be an incredibly powerful tool to enable organizations to easily transform content into knowledge.  This has been enabled through machine teaching which accelerates the extraction of valuable information as metadata from content within SharePoint.
@@ -21,9 +20,8 @@ This document explains how to create a customer ready demo that extends SharePoi
 
 ## Steps
 
-- [Step 1: Create a Syntex Enabled SharePoint tenant](https://github.com/liamca/Extending_SharePoint_Syntex_to_Cognitive_Search/blob/main/Create_Syntex_Enabled_SharePoint_Tenant.md) (Microsoft Employees Only)
-- [Step 2: Create and Apply Document Understanding](https://github.com/liamca/Extending_SharePoint_Syntex_to_Cognitive_Search/blob/main/Create_and_Apply_Doc_Understanding.md)
-- [Step 3: Extend SharePoint Content to Cognitive Search](https://github.com/liamca/Extending_SharePoint_Syntex_to_Cognitive_Search/blob/main/Extend_Content_to_Cognitive_Search.md)
+- [Step 1: Create and Apply Document Understanding](https://github.com/liamca/Extending_SharePoint_Syntex_to_Cognitive_Search/blob/main/Create_and_Apply_Doc_Understanding.md)
+- [Step 2: Extend SharePoint Content to Cognitive Search](https://github.com/liamca/Extending_SharePoint_Syntex_to_Cognitive_Search/blob/main/Extend_Content_to_Cognitive_Search.md)
 
 ## Optional: 
 - [Create and Apply Forms Understanding](https://github.com/liamca/Extending_SharePoint_Syntex_to_Cognitive_Search/blob/main/Create_and_Apply_Forms_Understanding.md)
